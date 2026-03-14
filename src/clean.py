@@ -5,7 +5,7 @@ import pandas as pd
 from loguru import logger
 
 
-def cleaning_data(df_brute : pd.DataFrame):
+def cleaning_data(df_brute : pd.DataFrame, file : str):
     """Cette fonction se charge du néttoyage des données brites extrait"""
     logger.info("Début du néttoyage des données brutes")
 
@@ -36,4 +36,5 @@ def cleaning_data(df_brute : pd.DataFrame):
     ).fillna(0)
 
     logger.info("Données Brutes néttoyées avec succée")
+    df_rh.to_csv(file, index=False)
     return df_rh

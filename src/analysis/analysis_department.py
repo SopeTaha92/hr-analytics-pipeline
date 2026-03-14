@@ -15,13 +15,12 @@ def analysis_by_department(df_rh : pd.DataFrame):
                 'total_compensation' : 'mean',
                 'experience_years' : 'mean',
                 'year_in_company' : 'mean',
-                'performance_rating' : lambda x: x.mode().iloc[0] if not x.mode().empty else 'N/A'
+                #'performance_rating' : lambda x: x.mode().iloc[0] if not x.mode().empty else 'N/A'
+                'annuel_compensation' : 'mean'
             }
         ).round(2)
         .reset_index() 
     ) 
 
 
-
-
-    pass
+    return df_rh_category

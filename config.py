@@ -21,3 +21,20 @@ LOG_FILE = LOG_DIR / f"logging_file_{TODAY}.log"
 EXCEL_DIR = Path('Output_excel')
 EXCEL_DIR.mkdir(parents=True, exist_ok=True)
 EXCEL_FILE = EXCEL_DIR / f"DONNÉES_RH_BRUTES_{TODAY}.xlsx"
+
+
+EXCEL_COLOR = {
+    'vert': '#C6EFCE',
+    'rouge': '#FFC7CE',
+    'orange': '#FFEB9C',
+    'header': '#4F81BD'
+}
+
+EXCEL_FORMATTING = {
+    'bonus' :{
+        'seuil_rouge' : 0.10,
+        'min_orange' : 0.10,
+        'max_orange' : 0.15,
+        'seuil_vert' : 0.15
+    }
+}

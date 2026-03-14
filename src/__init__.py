@@ -8,4 +8,4 @@ from .features import add_features
 from .report import repporting_excel
 
 
-from .analysis import analysis_department
+from .analysis import analysis_by_department
