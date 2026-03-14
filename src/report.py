@@ -1,10 +1,13 @@
 
 
+from loguru import logger
+import pandas as pd
+import xlsxwriter
+from typing import Dict
 
-import pandas as pd 
 
 
-def excel_generate(file_excel, multi_onglets):
+def repporting_excel(file_excel, multi_onglets : Dict[str , pd.DataFrame]):
     with pd.ExcelWriter(file_excel, engine='xlsxwriter') as writer:
         workbook = writer.book
 
