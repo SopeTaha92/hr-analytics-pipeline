@@ -6,11 +6,14 @@ from loguru import logger
 
 
 def analysis_by_department(df_rh : pd.DataFrame):
-    df_rh_category = (
+    """Cette fonction se charge d'effectuer des analyses par departement"""
+    logger.info("Début des analyses par département")
+    df_rh_department = (
         df_rh.groupby('department')
         .agg(
             {
-                'salary' : 'mean',
+                'employee_id' : 'count',
+                'salary' : 'mean',#   ['mean', 'min', 'max']
                 'bonus_amount' : 'mean',
                 'total_compensation' : 'mean',
                 'experience_years' : 'mean',
@@ -18,9 +21,10 @@ def analysis_by_department(df_rh : pd.DataFrame):
                 #'performance_rating' : lambda x: x.mode().iloc[0] if not x.mode().empty else 'N/A'
                 'annuel_compensation' : 'mean'
             }
-        ).round(2)
-        .reset_index() 
+        )
+        .round(2)
+        .reset_index()
+        
     ) 
-
-
-    return df_rh_category
+    logger.info("Analyse par département effeectue avec succée")
+    return df_rh_department 

@@ -2,3 +2,7 @@
 
 
 from .analysis_department import analysis_by_department
+from .analysis_level import analysis_by_level
+from .analysis_anciennete import analysis_by_anciennete
+from .analysis_perf_rating import analysis_by_performance_rating
+from .analysis_top_sal_dep import analysis_by_top_salaries_par_departement
