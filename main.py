@@ -26,7 +26,7 @@ analyse_top_sal_dep = analysis_by_top_salaries_par_departement(complet_data, TOP
 onglets = {
     'Données Brutes' : brute_data,
     'Données Néttoyées au Complet' : complet_data,
-    'Données Salaires Par Catégories' : analyse_departement,
+    'Données Par Département' : analyse_departement,
     'Données Par Level' : analyse_level,
     'Données Par ancienneté' : analyse_anciennete,
     'Données Par performance_rating' : analyse_perf_rating,

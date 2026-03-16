@@ -17,7 +17,7 @@ def analysis_by_level(df_rh : pd.DataFrame):
         .agg(
             {
                 'employee_id' : 'count',
-                'salary' : ['mean', 'min', 'max'],
+                'salary' : ['min', 'mean', 'max'],
                 'bonus_amount' : 'mean',
                 'total_compensation' : 'mean',
                 'experience_years' : 'mean',
