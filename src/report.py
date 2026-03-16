@@ -8,6 +8,8 @@ import config
 
 
 def repporting_excel(file_excel, multi_onglets : Dict[str , pd.DataFrame]):
+    """Cette fonction se charge de la création du fichier Excel avec ses multiples feuilles"""
+    logger.info(f'Début de création du Fichier Excel multi-onglets : {file_excel.name}')
     with pd.ExcelWriter(file_excel, engine='xlsxwriter') as writer:
         workbook = writer.book
 
@@ -70,11 +72,14 @@ def repporting_excel(file_excel, multi_onglets : Dict[str , pd.DataFrame]):
                 }
         #liste = ['salary', 'bonus', 'total_compensation', 'bonus_amount']
         for name, data in multi_onglets.items():
+            logger.info(f'Création de la feuille {name}')
             data.to_excel(writer, sheet_name=name, index=False)
             worksheet = writer.sheets[name]
             for col_numb, value in enumerate(data.columns.values):
                 worksheet.write(0, col_numb, value, header_format)
+            logger.info(f'Application du header_format pour la feuille {name}')
             worksheet.freeze_panes(1, 0)
+            logger.info(f"Fixation de l'entete de la page pour la feuille {name}")
             cols_monetaires = ['salary', 'total_compensation', 'bonus_amount', 'annuel_compensation', 'salary_mean', 'salary_min', 'salary_max', 'total_compensation_mean', 'annuel_compensation_mean', 'bonus_amount_mean']
             cols_percent = ['bonus']
             year_numb_cols = ['year_in_company', 'year_in_company_mean', 'experience_years', 'experience_years_mean']
@@ -90,6 +95,7 @@ def repporting_excel(file_excel, multi_onglets : Dict[str , pd.DataFrame]):
                     worksheet.set_column(i, i, column_width, year_numb_fmt)
                 else:
                     worksheet.set_column(i, i, column_width, data_format)
+            logger.info(f"Application des divers format pour la feuille {name}")
 
             if name == 'Données Néttoyées au Complet':
                 logger.info("Application de la mise en forme conditionnelle")

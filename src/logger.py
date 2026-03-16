@@ -5,6 +5,8 @@ from loguru import logger
 
 
 def logging_file(file : str):
+    """Cette fonction se charge de génération des fichiers de logs"""
+    logger.info('Fichier de logs crée avec succée début du traitement du pipeline')
     logger.remove()
     logger.add(
         file,
