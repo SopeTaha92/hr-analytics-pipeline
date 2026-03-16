@@ -1,59 +1,80 @@
-👥 HR Analytics Pipeline - Gestion du Personnel
+👥 HR Analytics Pipeline - Big Data Edition (1 000+ lignes)
 
-Ce projet est un pipeline de traitement de données RH conçu pour transformer des registres bruts d'employés en tableaux de bord analytiques. Il permet de suivre des indicateurs clés (KPI) comme la répartition par département, l'ancienneté, et les structures salariales.
+Ce projet est un pipeline ETL (Extract, Transform, Load) industriel conçu pour traiter des registres RH volumineux. Il transforme des données brutes hétérogènes en un outil d'aide à la décision automatisé pour les Directions des Ressources Humaines.
 
-🏢 Pourquoi ce projet ?
+🏢 Enjeux du Projet
 
-Dans le cadre de ma montée en compétence en Data Engineering, ce projet simule la gestion de données sensibles et stratégiques. L'objectif est de fournir aux départements RH une vision claire de la masse salariale et de la démographie de l'entreprise.
+Passer d'un échantillon de 10 lignes à un dataset de 1 000 collaborateurs permet de simuler les besoins d'une grande entreprise ou d'une organisation internationale (type ONG).
+L'objectif est de fournir une vision macro (statistiques globales) et micro (détails par employé) de la structure sociale.
 
-🛠️ Organisation & Centralisation
+🚀 Fonctionnalités Clés
 
-Le projet utilise une architecture modulaire pour une maintenance facilitée :
+Scalabilité : Traitement fluide de milliers de lignes sans perte de performance.
 
-config.py : Centralisation des variables globales (chemins d'accès, paramètres de logging).
+Nettoyage Avancé : Normalisation des noms, conversion des devises (€), gestion des dates et des formats de bonus.
 
-main.py : Orchestrateur principal qui appelle les modules de nettoyage et d'analyse.
+Enrichissement (Feature Engineering) : Calcul automatique de l'ancienneté, des tranches salariales et des taux de bonus réels.
 
-Logging Professionnel : Utilisation de Loguru pour un suivi précis de chaque étape du pipeline.
+Résilience : Système d'extraction avec Retry Logic pour garantir la continuité du pipeline.
 
-📊 Analyses & Visualisations
+🛠️ Architecture Modulaire & Centralisée
 
-Le rapport final généré automatiquement inclut :
+Le projet suit les meilleures pratiques de développement avec une séparation stricte des responsabilités :
 
-Répartition par Département : Analyse des effectifs via graphiques en secteurs.
+config.py : Unique source de vérité pour les chemins, formats et paramètres métier.
 
-Analyse Salariale : Comparaison des revenus par grade et ancienneté.
+src/extracting.py : Module robuste de récupération des données.
 
-Indicateurs de Performance : Suivi des statuts des employés (Actif, Congé, etc.).
+src/cleaning.py : Algorithmes de nettoyage et de typage des données.
+
+src/analysis/ : 5 modules d'analyses distincts pour une clarté maximale.
+
+📊 Tableau de Bord Excel Automatisé
+
+Le pipeline génère un rapport .xlsx multi-onglets incluant :
+
+Répartition par Département : Analyse des effectifs (Pie Charts).
+
+Structure Salariale : Comparaison des revenus par grade et expérience (Bar/Line Charts).
+
+Analyse Géographique : Répartition des employés par ville (Sénégal/International).
+
+Performance & Bonus : Corrélation entre notation et rémunération variable.
 
 📂 Structure du Dépôt
 
 ├── src/
-│   ├── analysis/           # 5 analyses complètes
-│   ├── __init__.py
-│   ├── adding_features.py  # Enrichissement des données
-│   ├── cleaning.py         # Nettoyage robuste
-│   ├── excel_generator.py   # Génération Excel avec graphiques
-│   └── extracting.py       # Extraction avec retry
-├── Output_excel/           # Rapports générés
-├── config.py               # Configuration centralisée
-├── main.py                 # Orchestration parfaite
-├── requirements.txt        # Dépendances complètes
-└── README.md               # Documentation pro
+│   ├── analysis/        # 🔍 5 axes d'analyses métiers
+│   ├── adding_features.py # ✨ Création de nouveaux indicateurs
+│   ├── cleaning.py      # 🧹 Nettoyage et normalisation
+│   ├── excel_generator.py # 📊 Moteur de rendu XlsxWriter (Graphiques)
+│   └── extracting.py    # 📥 Extraction résiliente (Retry logic)
+├── Output_excel/        # 📂 Rapports générés (Ignorés par Git via .gitignore)
+├── config.py            # ⚙️ Configuration centralisée (Paths, Logs)
+├── main.py              # 🚀 Chef d'orchestre du pipeline
+├── requirements.txt     # 📋 Liste des dépendances (Pandas, XlsxWriter, Loguru)
+└── README.md            # 📖 Documentation professionnelle
 
-Perspectives : Ce projet sera prochainement migré vers une architecture PostgreSQL pour permettre des requêtes SQL complexes sur les historiques de carrière.
 
-🚀 Installation & Lancement
+📈 Prochaines Étapes
 
+[ ] SQL Integration : Migration du stockage CSV vers PostgreSQL.
+
+[ ] Dashboard Interactif : Connexion des sorties vers Power BI ou Streamlit.
+
+[ ] Data SIG : Cartographie des effectifs pour le secteur humanitaire.
+
+💻 Installation & Lancement
 Bash
 
-# 1. Cloner
-git clone https://github.com/SopeTaha92/Projet_vente_e-commerce.git
+# 1. Cloner le dépôt
+git clone https://github.com/SopeTaha92/hr-analytics-pipeline.git
 
 # 2. Installer les dépendances
 pip install -r requirements.txt
 
-# 3. Exécuter
+# 3. Exécuter le pipeline
 python main.py
 
-Développé par Mahmoud At-Tidiane - Passionné par l'ingénierie des données et l'analyse décisionnelle.
+
+Développé par Mahmoud Saleh At-Tidiane - Data Engineer en devenir, spécialisé dans l'automatisation et l'analyse décisionnelle.
