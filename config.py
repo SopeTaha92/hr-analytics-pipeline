@@ -3,15 +3,14 @@
 
 from pathlib import Path
 from datetime import datetime
-from loguru import logger
 
 TODAY = datetime.now().strftime('%d-%m-%Y_%H-%M-%S')
 MAX_RETRIES = 3
 DELAY = 1
 TOP_SALAIRE_DEPARTEMENT = 1
 
-#BRUTE_DATA_FILE = Path('data/raw/donnee_brute_rh.csv')
-BRUTE_DATA_FILE = Path('data/raw/donnees_rh_1000_lignes.csv')
+#BRUTE_DATA_FILE = Path('data/raw/donnee_brute_rh.csv')#le fichier csv de 10 lignes
+BRUTE_DATA_FILE = Path('data/raw/donnees_rh_1000_lignes.csv')#le fichier csv de 1000 lignes
 BRUTE_DATA_CLEAN_DIR = Path('data/processed')
 BRUTE_DATA_CLEAN_DIR.mkdir(parents=True, exist_ok=True)
 BRUTE_DATA_CLEAN_FILE = BRUTE_DATA_CLEAN_DIR / "donnee_brute_rh_clean.csv"
