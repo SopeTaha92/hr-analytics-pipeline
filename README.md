@@ -1,3 +1,10 @@
+
+![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
+![Loguru](https://img.shields.io/badge/Loguru-000000?style=for-the-badge&logo=python&logoColor=white)
+![Pandas](https://img.shields.io/badge/pandas-%23150458.svg?style=for-the-badge&logo=pandas&logoColor=white)
+![XlsxWriter](https://img.shields.io/badge/XlsxWriter-217346?style=for-the-badge&logo=microsoft-excel&logoColor=white)
+
+
 👥 HR Analytics Pipeline - Big Data Edition (1 000+ lignes)
 
 Ce projet est un pipeline ETL (Extract, Transform, Load) industriel conçu pour traiter des registres RH volumineux. Il transforme des données brutes hétérogènes en un outil d'aide à la décision automatisé pour les Directions des Ressources Humaines.
