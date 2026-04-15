@@ -5,7 +5,7 @@ import pandas as pd
 from loguru import logger 
 
 
-def analysis_by_top_salaries_par_departement(df_rh: pd.DataFrame, top_n: int):
+def analysis_by_top_salaries_par_departement(df_rh: pd.DataFrame, top_n: int) -> pd.DataFrame:
     """Trouve les top N salaires dans chaque département."""
     logger.info(f"Début de la collecte des {top_n} top salaires par département")
     

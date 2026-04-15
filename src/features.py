@@ -7,7 +7,7 @@ from loguru import logger
 
 
 
-def add_features(df_rh : pd.DataFrame):
+def add_features(df_rh : pd.DataFrame) -> pd.DataFrame:
     """Cette fonction s'occupe d'ajouter des colonnes supplémentaires"""
     logger.info("Début de l'ajout des nouvelles colonnes")
 

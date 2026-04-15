@@ -48,8 +48,18 @@ Analyse Géographique : Répartition des employés par ville (Sénégal/Internat
 
 Performance & Bonus : Corrélation entre notation et rémunération variable.
 
-📂 Structure du Dépôt
+## 📸 Aperçu du rapport généré
 
+![Rapport Excel](images/output_excel/brutes.png)
+![Rapport Excel](images/output_excel/clean_complet.png)
+![Rapport Excel](images/output_excel/departement.png)
+![Rapport Excel](images/output_excel/top_salaire_dep.png)
+
+
+📂 Structure du Dépôt
+├── images/           ← Nouveau dossier
+│   ├── output_excel/ 4 images du rapport
+│   └── architecture/ une image du diagramme d'architecture
 ├── src/
 │   ├── analysis/        # 🔍 5 axes d'analyses métiers
 │   ├── adding_features.py # ✨ Création de nouveaux indicateurs
@@ -61,6 +71,9 @@ Performance & Bonus : Corrélation entre notation et rémunération variable.
 ├── main.py              # 🚀 Chef d'orchestre du pipeline
 ├── requirements.txt     # 📋 Liste des dépendances (Pandas, XlsxWriter, Loguru)
 └── README.md            # 📖 Documentation professionnelle
+
+![Diagramme d'Architecture](images/architecture/Gemini_Generated_Image_vgzdw0vgzdw0vgzd.png)
+
 
 
 📈 Prochaines Étapes

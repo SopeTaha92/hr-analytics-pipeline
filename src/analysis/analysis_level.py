@@ -8,7 +8,7 @@ import pandas as pd
 from loguru import logger
 
 
-def analysis_by_level(df_rh : pd.DataFrame):
+def analysis_by_level(df_rh : pd.DataFrame) -> pd.DataFrame:
     """Cette fonction se charge d'effectuer des analyses par Level"""
     logger.info("Début des analyses par Level")
     df_rh_level = df_rh.copy()

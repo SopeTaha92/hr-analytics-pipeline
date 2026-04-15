@@ -11,6 +11,30 @@ TOP_SALAIRE_DEPARTEMENT = 1
 
 #BRUTE_DATA_FILE = Path('data/raw/donnee_brute_rh.csv')#le fichier csv de 10 lignes
 BRUTE_DATA_FILE = Path('data/raw/donnees_rh_1000_lignes.csv')#le fichier csv de 1000 lignes
+
+"""
+{
+  "ssh": "Disabled",
+  "previewLimit": 50,
+  "server": "localhost",
+  "port": 5432,
+  "driver": "PostgreSQL",
+  "name": "taha",
+  "database": "rh_db",
+  "username": "sope"
+}
+
+"""
+DB_CONFIG = {
+    'host' : 'localhost',
+    'port' : 5432,
+    'dbname' : 'rh_db',
+    'user' : 'sope',
+    'password' : 'azerty12'
+}
+
+TABLE_NAME = 'rh_table'
+
 BRUTE_DATA_CLEAN_DIR = Path('data/processed')
 BRUTE_DATA_CLEAN_DIR.mkdir(parents=True, exist_ok=True)
 BRUTE_DATA_CLEAN_FILE = BRUTE_DATA_CLEAN_DIR / "donnee_brute_rh_clean.csv"

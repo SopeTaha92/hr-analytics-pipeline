@@ -5,7 +5,7 @@ import pandas as pd
 from loguru import logger
 
 
-def analysis_by_department(df_rh : pd.DataFrame):
+def analysis_by_department(df_rh : pd.DataFrame) -> pd.DataFrame:
     """Cette fonction se charge d'effectuer des analyses par departement"""
     logger.info("Début des analyses par département")
     df_rh_department = (

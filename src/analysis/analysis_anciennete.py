@@ -8,7 +8,7 @@ import pandas as pd
 from loguru import logger
 
 
-def analysis_by_anciennete(df_rh : pd.DataFrame):
+def analysis_by_anciennete(df_rh : pd.DataFrame) -> pd.DataFrame:
     """Cette fonction se charge d'effectuer des analyses par ancienneté"""
     logger.info("Début des analyses par ancienneté")
     df_rh_anciennete = (

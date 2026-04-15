@@ -2,19 +2,24 @@
 
 
 import sys
-
 from loguru import logger
 import pandas as pd
 import time
+import psycopg2
+from config import DB_CONFIG, TABLE_NAME
 
 
 
-def extracting_data(file : str, max_retries : int, delay : int):
+def extracting_data(file : str, max_retries : int, delay : int) -> pd.DataFrame:
     """Cette fonction se charge de l'extraction des données brutes depuis la source ici un fichier csv"""
     logger.info("Début de l'extraction des données brutes depuis le fichier csv source")
     for retry in range(max_retries):
         try:
-            df_brute = pd.read_csv(file)
+            conn = psycopg2.connect(**DB_CONFIG)
+            logger.info('testing connection !')
+            df_brute = pd.read_sql(f"SELECT * FROM {TABLE_NAME};", conn)
+            logger.info("✅ Connexion réussie !")
+            conn.close()
             logger.success("Données brutes extrait avec succée")
             return df_brute
         except FileNotFoundError as e:
