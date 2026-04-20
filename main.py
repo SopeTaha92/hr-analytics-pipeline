@@ -10,7 +10,7 @@ from src import analysis_by_department, analysis_by_level, analysis_by_anciennet
 
 
 logging_file(LOG_FILE)
-brute_data = extracting_data(BRUTE_DATA_FILE, MAX_RETRIES, DELAY)
+brute_data = extracting_data()
 clean_data = cleaning_data(brute_data, BRUTE_DATA_CLEAN_FILE)
 complet_data = add_features(clean_data)
 analyse_departement = analysis_by_department(complet_data)

@@ -3,6 +3,7 @@
 
 from pathlib import Path
 from datetime import datetime
+from dotenv import dotenv_values
 
 TODAY = datetime.now().strftime('%d-%m-%Y_%H-%M-%S')
 MAX_RETRIES = 3
@@ -25,15 +26,18 @@ BRUTE_DATA_FILE = Path('data/raw/donnees_rh_1000_lignes.csv')#le fichier csv de 
 }
 
 """
+
+env = dotenv_values(".env")
+
 DB_CONFIG = {
-    'host' : 'localhost',
-    'port' : 5432,
-    'dbname' : 'rh_db',
-    'user' : 'sope',
-    'password' : 'azerty12'
+    'host' : env['DB_HOST'],
+    'port' : int(env['DB_PORT']),
+    'dbname' : env['DB_NAME'],
+    'user' : env['DB_USER'],
+    'password' : env['DB_PASSWORD']
 }
 
-TABLE_NAME = 'rh_table'
+TABLE_NAME = env['TABLE']
 
 BRUTE_DATA_CLEAN_DIR = Path('data/processed')
 BRUTE_DATA_CLEAN_DIR.mkdir(parents=True, exist_ok=True)

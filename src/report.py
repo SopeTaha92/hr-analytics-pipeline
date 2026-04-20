@@ -279,7 +279,10 @@ def repporting_excel(file_excel, multi_onglets : Dict[str , pd.DataFrame]):
                 worksheet.insert_chart(1, data.shape[1] + 1, chart_col)
                 logger.info(f'Graphique crée avec succée pour la feuille {name}')
 
+        logger.success(f"Feuille Excel de Repporting {name} crée avec succée")
+
+    logger.success(f"Fichier Excel de Repporting {file_excel.name} a étais crée avec succée")
+
 
                     
                 
-    print('Thanks')
