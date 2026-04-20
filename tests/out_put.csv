@@ -1,0 +1,2 @@
+employee_id,full_name,department,position,salary,experience_years,hire_date,city,performance_rating,bonus
+EMP-001,Kevin Legrand,R&D,Research Scientist,79612,10,2010-02-18,Bordeaux,A,0.03
