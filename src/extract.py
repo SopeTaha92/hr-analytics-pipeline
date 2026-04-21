@@ -31,4 +31,4 @@ def extracting_data(max_retries : int = MAX_RETRIES , delay : int = DELAY) -> pd
     logger.critical(f"Echec total aprés {max_retries} tentatives")
     sys.exit("Arret complet du programme aprés les echecs")
 
-    return df_brute
+    
