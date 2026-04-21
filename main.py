@@ -2,7 +2,7 @@
 
 
 
-from config import LOG_FILE, BRUTE_DATA_FILE, BRUTE_DATA_CLEAN_FILE, EXCEL_FILE, MAX_RETRIES, DELAY, TOP_SALAIRE_DEPARTEMENT
+from config import LOG_FILE,  BRUTE_DATA_CLEAN_FILE, EXCEL_FILE,  TOP_SALAIRE_DEPARTEMENT
 
 from src import logging_file
 from src import extracting_data, cleaning_data, add_features, repporting_excel
@@ -20,8 +20,6 @@ analyse_perf_rating = analysis_by_performance_rating(complet_data)
 analyse_top_sal_dep = analysis_by_top_salaries_par_departement(complet_data, TOP_SALAIRE_DEPARTEMENT)
 
 
-#print(f"\n{analyse_top_sal_dep}")
-#print(f"\n{complet_data}")
 
 onglets = {
     'Données Brutes' : brute_data,
